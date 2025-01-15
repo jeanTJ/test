@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f495b790-38ce-4b9e-97fc-c6231349759f" name="Changes" comment="abstract">
-      <change afterPath="$PROJECT_DIR$/Cours_POO/exercise1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training_house/exo-PPO6.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training_jonathan/tri_par selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f495b790-38ce-4b9e-97fc-c6231349759f" name="Changes" comment="algo">
+      <change afterPath="$PROJECT_DIR$/securite_app/MD5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securite_app/hashage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securite_app/hashage_new.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securite_app/utilisation_algo_hash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,12 +51,16 @@
     "Python.Cour1 (1).executor": "Run",
     "Python.Exo_POO2.executor": "Run",
     "Python.Exo__POO3.executor": "Run",
+    "Python.MD5.executor": "Run",
+    "Python.SHA-1-2.executor": "Run",
     "Python.exemple_Personne.executor": "Debug",
     "Python.exercise1.executor": "Run",
     "Python.exo-PPO6.executor": "Run",
+    "Python.hashage.executor": "Run",
     "Python.revis.executor": "Run",
     "Python.test.executor": "Run",
     "Python.tri_par selection.executor": "Run",
+    "Python.utilisation_algo_hash.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -64,8 +68,8 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.tri_par selection">
-    <configuration name="Cour1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.password_projet">
+    <configuration name="MD5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,11 +78,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Cours_POO" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Cours_POO/Cour1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/MD5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Cour1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="hashage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,11 +100,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Cours_POO" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Github_Project\TJ\test\Cours_POO\Cour1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/hashage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="exercise1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="hashage_new" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,11 +122,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Cours_POO" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Cours_POO/exercise1.py" />
+      <option name="SCRIPT_NAME" value="C:\Github_Project\TJ\test\test\securite_app\hashage_new.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="exo-PPO6" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="password_projet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,11 +144,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/training_house" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training_house/exo-PPO6.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/password_projet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tri_par selection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="utilisation_algo_hash" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,11 +166,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/training_jonathan" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training_jonathan/tri_par selection.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/utilisation_algo_hash.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tri_par selection" />
-        <item itemvalue="Python.exo-PPO6" />
-        <item itemvalue="Python.exercise1" />
-        <item itemvalue="Python.Cour1 (1)" />
-        <item itemvalue="Python.Cour1" />
+        <item itemvalue="Python.password_projet" />
+        <item itemvalue="Python.utilisation_algo_hash" />
+        <item itemvalue="Python.hashage_new" />
+        <item itemvalue="Python.MD5" />
+        <item itemvalue="Python.hashage" />
       </list>
     </recent_temporary>
   </component>
@@ -225,11 +229,29 @@
       <option name="project" value="LOCAL" />
       <updated>1736523482578</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="abstract">
+      <option name="closed" value="true" />
+      <created>1736615983553</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736615983553</updated>
+    </task>
+    <task id="LOCAL-00005" summary="algo">
+      <option name="closed" value="true" />
+      <created>1736616007106</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736616007106</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="revision" />
-    <option name="LAST_COMMIT_MESSAGE" value="revision" />
+    <MESSAGE value="abstract" />
+    <MESSAGE value="algo" />
+    <option name="LAST_COMMIT_MESSAGE" value="algo" />
   </component>
 </project>
