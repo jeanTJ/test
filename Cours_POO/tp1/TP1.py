@@ -30,6 +30,28 @@ class Bande_dessine(Volume):
         self.dessinateur = dessinateur
         super().__init__(titre,auteur)
 
+    def ajout_bd(self):
+        with open('bande_d.csv','r', newline='') as f:
+            w = csv.DictReader(f)
+            tab = list(w)
+        bool = False
+        for x in tab:
+            if x['Titre'] == self.titre and x['Auteur'] == self.date and x['Dessinateur'] == self.dessinateur:
+                x['Quantite'] = int(x['Quantite'])+1
+                bool = True
+                break
+        if bool == False:
+            tab.append({'Titre':self.titre, "Auteur":self.auteur, 'Dessinateur':self.dessinateur, 'Quantite':1})
+        #update la base de donnee
+        with open('bande_d.csv','w') as f:
+            w = csv.DictWriter(f,['Titre', 'Auteur','Dessinateur','Quantite'])
+            w.writeheader()
+            w.writerows(tab)
+
+
+
+
+
 #Sous classe de Volume
 
 class dictionnaire(Volume):
@@ -66,6 +88,35 @@ class Journal(Document):
             w = csv.DictWriter(f, ['Titre', 'Date', 'Quantite'])
             w.writeheader()
             w.writerows(tab)
+
+    def enlenver_journal(self):
+        tab = []
+        with open('journal.csv', 'r') as f:
+            lig = f.readline()
+            lig = f.readline()
+            while lig != '':
+                lig = lig.strip().split(';')
+                dict = {'Titre': lig[0], 'Date': lig[1], 'Quantite': int(lig[2])}
+                tab.append(dict)
+                lig = f.readline()
+            bool = False
+            for x in tab:
+                if x['Titre'] == self.titre and x['date'] == self.date and x['Quantite'] != 1:
+                    x['Quantite'] -= 1
+                    bool = True
+                    break
+            try:
+                if bool == False:
+                    tab.remove({'Titre': self.titre, "Date": self.date, "Quantite":self.nombre})
+            except FileNotFoundError:
+                print("Impossible de suprimer ce journal car il ne figure pas dans la liste")
+        #Updater la base de donnee
+        with open('journal.csv', 'w', newline='') as f:
+            w = csv.DictWriter(f, ['Titre', 'Date', 'Quantite'])
+            w.writeheader()
+            w.writerows(tab)
+
+
 
 
 
