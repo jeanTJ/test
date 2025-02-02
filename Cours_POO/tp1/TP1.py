@@ -1,5 +1,11 @@
-import datetime
+from datetime import datetime
+import pandas
 import csv
+
+from Cours_POO.tp1.mehode import extrait, extrait_c1, extrait_csv, valider_date, ecrire_csv, csv_dictreader, \
+    csv_dictwriter
+
+
 class Document:
     def __init__(self,titre):
         self.titre = titre
@@ -21,7 +27,26 @@ class Livre(Volume):
         return f"{self.titre} de {self.auteur}"
 
     def est_disponible(self):
-        pass
+        tab = extrait_csv('livre.csv')
+        y = [self.titre, self.auteur]
+        if y in tab:
+            return True
+        return False
+    def ajout_livre(self):
+        liste = extrait_csv('livre.csv')
+        l1 = [self.titre,self.auteur]
+        liste.append(l1)
+        ecrire_csv('livre.csv', liste)
+    def enlever_livre(self):
+        tab = extrait_csv('livre.csv')
+        try:
+            tab.remove([self.titre,self.auteur])
+            ecrire_csv('livre.csv', tab)
+        except FileNotFoundError:
+            print("Ce livre n'est pas dans la bibliotheque")
+
+
+
 
 #Sous classe de Document et Volume
 
@@ -48,6 +73,18 @@ class Bande_dessine(Volume):
             w.writeheader()
             w.writerows(tab)
 
+    def enlever_bd(self):
+        tab = csv_dictreader('bande_d.csv')
+        bool = False
+        for x in tab:
+            if x['Titre'] == self.titre and x['Auteur'] == self.date and x['Dessinateur'] == self.dessinateur and x['Quantite'] >1:
+                x['Quantite'] = int(x['Quantite']) - 1
+                bool = True
+                break
+        if bool == False:
+            tab.remove({'Titre': self.titre, "Auteur": self.auteur, 'Dessinateur': self.dessinateur, 'Quantite': 1})
+
+
 
 
 
@@ -61,68 +98,44 @@ class dictionnaire(Volume):
 #Sous classe de Document
 
 class Journal(Document):
-    def __init__(self, titre, date, nombre):
+    def __init__(self, titre, date):
         self.date = date
-        self.nombre = nombre
         super().__init__(titre)
     def ajout_journal(self):
-        tab = []
-        with open('journal.csv','r') as f:
-            lig = f.readline()
-            lig = f.readline()
-            while lig != '':
-                lig = lig.strip().split(';')
-                dict = {'Titre': lig[0], 'Date': lig[1], 'Quantite': int(lig[2])}
-                tab.append(dict)
-                lig = f.readline()
+        tab = csv_dictreader('journal.csv')
+
         bool = False
         for x in tab:
-            if x['Titre'] == self.titre and x['Date'] == self.date:
-                x['Quantite'] += int(self.nombre)
+            if x['Titre'] == self.titre and x['Date'] == self.date and int(x['Quantite']) >=1:
+                x['Quantite'] = int(x['Quantite'])+1
                 bool = True
                 break
-        if bool:
-            tab.append({'Titre':self.titre, 'Date':self.date, 'Quantite':self.nombre})
+            else:
+                tab.append({'Titre':self.titre, 'Date':self.date, 'Quantite':1})
+                break
         #Updater la base de donnee
         with open('journal.csv', 'w', newline='') as f:
-            w = csv.DictWriter(f, ['Titre', 'Date', 'Quantite'])
+            w = csv.DictWriter(f, ['Titre', 'Date', 'Quantite'], delimiter=';')
             w.writeheader()
             w.writerows(tab)
+        print('Journal ajoute avec succes')
 
     def enlenver_journal(self):
         tab = []
-        with open('journal.csv', 'r') as f:
-            lig = f.readline()
-            lig = f.readline()
-            while lig != '':
-                lig = lig.strip().split(';')
-                dict = {'Titre': lig[0], 'Date': lig[1], 'Quantite': int(lig[2])}
-                tab.append(dict)
-                lig = f.readline()
-            bool = False
-            for x in tab:
-                if x['Titre'] == self.titre and x['date'] == self.date and x['Quantite'] != 1:
-                    x['Quantite'] -= 1
-                    bool = True
-                    break
-            try:
-                if bool == False:
-                    tab.remove({'Titre': self.titre, "Date": self.date, "Quantite":self.nombre})
-            except FileNotFoundError:
-                print("Impossible de suprimer ce journal car il ne figure pas dans la liste")
+        tab = csv_dictreader('journal.csv')
+        bool = False
+        for x in tab:
+            if x['Titre'] == self.titre and x['Date'] == self.date and int(x['Quantite']) > 1:
+                x['Quantite'] = int(x['Quantite'])-1
+                bool = True
+                break
+            else:
+                tab.remove({'Titre': self.titre, "Date": self.date, "Quantite": '1'})
+                break
         #Updater la base de donnee
-        with open('journal.csv', 'w', newline='') as f:
-            w = csv.DictWriter(f, ['Titre', 'Date', 'Quantite'])
-            w.writeheader()
-            w.writerows(tab)
-
-
-
-
-
-
-
-
+        ent = ['Titre', 'Date', 'Quantite']
+        csv_dictwriter('journal.csv', tab, ent)
+        print('Journal enlever avec succes')
 
 
 
@@ -131,75 +144,127 @@ class Adherent:
     def __init__(self, nom, prenom):
         self.nom = nom
         self.prenom = prenom
-    def __str__(self):
-        return f"{self.nom} {self.prenom}"
-    def emprunt(self,livre):
-        pass
+
     def nom_prenom(self):
-        return self.nom + ' ' + self.prenom
-
-
-
+        return f"{self.nom} {self.prenom}"
 
 
 class Emprunter:
-    def __init__(self, adherent, livre):
+    def __init__(self, adherent, livre,date):
         self.adherent = adherent
         self.livre = livre
         self.date_initial = datetime.now()
-        self.date_return = input()
-    def __str__(self):
-        return f"{self.livre} emprunter par {self.adherent} "
+        self.date_return = date
 
-    def enr_emprunt(self, adherent, livre):
-        self.date_init = datetime.now()
-        self.date_return = input()
+    def enr_emprunt(self):
+        time_i = self.date_initial
+        time_r = self.date_return
+        adh = self.adherent.nom +' '+ self.adherent.prenom +',' +  self.livre.titre +','+  self.livre.auteur +','+str(time_i)+','+str(time_r)
 
+        with open('emprunt.csv','a') as f:
+            w = csv.writer(f,delimiter=';')
+            w.writerow(adh)
+            #f.write('\n'+adh)
+        ###     f.write('Adherent'+','+ 'Livre' +','+ 'auteur' +','+"Date d'emprunt"+','+'Date de retour')
 
 
 class Bibliotheque:
     def __init__(self):
-        self.adherent = []
-        self.document = []
-        self.emprunt = []
+       self.emprunt = []
 
     def ajout_adherent(self,Adherent):
-        tab = []
-        with open('adherent.csv', 'r') as f:
-            line = f.readline()
-            line = f.readline()
-            while line != '':
-                line =line.strip().split(';')
-                tab.append(line[0]+' '+line[1])
-        if Adherent.nom_prenom() in tab:
-            print("Cet individu est deja un adherent de la bibliotheque")
+        with open('adherent.txt', 'r') as f:
+            tab = []
+            while line := f.readline():
+                line = line.strip()
+                tab.append(line)
+        adh = Adherent.nom +' '+ Adherent.prenom
+        if adh in tab:
+            print(f"impossible d'ajouter {adh} car il est deja adherent")
         else:
-            tab.append(Adherent.nom_prenom())
-        with open('adherent.csv','w') as f:
-            f.writelines(tab)
+            tab.append(adh)
+            print(f"{adh} a ete ajoute avec succe")
+        with open('adherent.txt','w') as f:
+            for x in tab:
+                f.write(x+'\n')
+
     def enlever_adherent(self, Adherent):
-        tab = []
-        with open('adherent.csv', 'r') as f:
-            line = f.readline()
-            line = f.readline()
-            while line != '':
-                line = line.strip().split(';')
-                tab.append(line[0] + ' ' + line[1])
+        with open('adherent.txt', 'r') as f:
+            tab = []
+            while line := f.readline():
+                line = line.strip()
+                tab.append(line)
             try:
                 tab.remove(Adherent.nom_prenom())
             except FileNotFoundError:
                 print("Erreur, cet individu ne figure pas dans la liste des adherents")
-        with open('adherent.csv','w') as f:
+        with open('adherent.txt', 'w') as f:
             f.writelines(tab)
+        print("Supression reussie")
 
-    def ajouter_document(self, Document):
-        tipe = int(input('Selectionner le type de document' '\n1- Jounal' '\n2- Volume' ))
-        #if tipe == 1:
+    def ajout_emprunt(self):
+        nom = input("Entrez le nom de l'adherent : ")
+        prenom = input("Entrez le prenom de l'adherent: ")
+        ind = nom+' '+prenom
+        tab = extrait('adherent.txt')
+        tab_emp = extrait_c1('emprunt.csv')
+        if ind in tab:
+            if ind not in tab_emp:
+                titre = input("Entrez le titre du livre solicite: ")
+                auteur = input("Entrez l'auteur du livre solicite: ")
+                livre = Livre(titre, auteur)
+                if livre.est_disponible() == True:
+                    emp = Emprunter(Adherent(nom, prenom), livre, valider_date()).enr_emprunt()
+                    livre.enlever_livre()
+                    print('Emprunt valide et enregistre avec succes')
+                else:
+                    print("Desole ce livre n'est pas disponible")
+
+            else:
+                print("Emprunt impossible, veuillez retourner les precedents documents")
+        else:
+            print("Emprunt impossible; n'est pas adherent")
+
+    def retour_emprunt(self,Adherent,Livre):
+        tab = extrait_csv('emprunt.csv')
+        for x in tab:
+            if x[0] == Adherent.nom_prenom() and x[1] == Livre.titre and x[2] == Livre.auteur:
+                tab.remove(x)
+                ecrire_csv('emprunt.csv', tab)
+                Livre.ajout_livre()
+                return print("Document retourner.")
+        print("Erreur livre non reconu")
 
 
+    def afficher_emprunt(self):
+        liste = extrait_csv('emprunt.csv')
+        print('LISTE DES EMPRUNTS')
+        for x in liste:
+            print(f"{x[0]}    |  {x[1]}      |{x[2]}       |{x[3]}    |{x[4]}  ")
+
+    def Afficher_adherent(self):
+        print("LISTE DES ADHERENT")
+        liste = extrait('adherent.txt')
+        for x in liste:
+            print(x)
+
+    def afficherdocuments(self):
+        pass
+    def supprimer_doc(self):
+        pass
 
 
+b1 = Bibliotheque()
 
+b1.ajout_adherent(Adherent('Bosco', 'Parping'))
+b1.ajout_adherent(Adherent('Pierre','Alain'))
+b1.ajout_adherent(Adherent('Pierre','Gaston'))
+#b1.ajout_adherent(Adherent('Bosco','Parping'))
+#b1.ajout_emprunt()
+#b1.enlever_adherent(Adherent('Bosco','Parping'))
+#b1.retour_emprunt(Adherent('Pierre', 'Gaston'), Livre('le solitaire', 'Rouseau'))
+b1.afficher_emprunt()
+b1.Afficher_adherent()
 
 
 
