@@ -37,11 +37,13 @@ class Livre(Volume):
         l1 = [self.titre,self.auteur]
         liste.append(l1)
         ecrire_csv('livre.csv', liste)
+        print(f"{self.titre} de {self.auteur} a ete ajoute a la bibliotheque")
     def enlever_livre(self):
         tab = extrait_csv('livre.csv')
         try:
             tab.remove([self.titre,self.auteur])
             ecrire_csv('livre.csv', tab)
+            print(f"{self.titre} de {self.auteur} a ete retire de la bibliotheque")
         except FileNotFoundError:
             print("Ce livre n'est pas dans la bibliotheque")
 
@@ -172,18 +174,21 @@ class Bibliotheque:
     def __init__(self):
        self.emprunt = []
 
-    def ajout_adherent(self,Adherent):
-        with open('adherent.txt', 'r') as f:
-            tab = []
-            while line := f.readline():
-                line = line.strip()
-                tab.append(line)
-        adh = Adherent.nom +' '+ Adherent.prenom
-        if adh in tab:
-            print(f"impossible d'ajouter {adh} car il est deja adherent")
-        else:
-            tab.append(adh)
-            print(f"{adh} a ete ajoute avec succe")
+    def ajout_adherent(self,Adherent(input("entrer le nom: "), input("entrez le prenom : "))):
+        try:
+            with open('adherent.txt', 'r') as f:
+                tab = []
+                while line := f.readline():
+                    line = line.strip()
+                    tab.append(line)
+            adh = Adherent.nom +' '+ Adherent.prenom
+            if adh in tab:
+                print(f"impossible d'ajouter {adh} car il est deja adherent")
+            else:
+                tab.append(adh)
+                print(f"{adh} a ete ajoute avec succes")
+        except FileNotFoundError:
+            print("fichier adherent.txt introuvable")
         with open('adherent.txt','w') as f:
             for x in tab:
                 f.write(x+'\n')
@@ -248,24 +253,92 @@ class Bibliotheque:
         for x in liste:
             print(x)
 
-    def afficherdocuments(self):
-        pass
+
+    def ajout_documents(self):
+        print("Selectionner le document a ajouter")
+        choix = input("1--journal\n2--Livre\n3--Bande dessinnee\n")
+        while choix in ['1', '2', '3']:
+            if choix == '1':
+                titre = input("Entrez le titre du journal:  ")
+                date = valider_date()
+                Journal(titre, date).ajout_journal()
+            elif choix == '2':
+                titre = input("Entrez le titre du livre: ")
+                auteur = input("entrez l'auteur: ")
+                Livre(titre, auteur).ajout_livre()
+            elif choix  == '3':
+                titre = input("Entrez le titre de la bande dessinee: ")
+                auteur = input("entrez l'auteur: ")
+                dess = input("Entrez le nom du dessinnateur:  ")
+                Bande_dessine(titre, auteur, dess).ajout_bd()
+            return
+
+
+
+    def afficher_documents(self):
+        tab1 = extrait_csv('journal.csv')
+        tab2 = extrait_csv('livre.csv')
+        tab3 = extrait_csv('bande_d.csv')
+        print("LISTE DES JOURNAUX EN STOCK")
+        for x in tab1:
+            print(f"{x[0]}   |    {x[1]}    |{x[2]}")
+        print()
+        print("LISTE DES LIVRES EN STOCK")
+        for x in tab2:
+            print(f"{x[0]}   |    {x[1]}")
+        print()
+        print("LISTES DES BANDES DESSINNEES DISPONIBLE")
+        for x in tab3:
+            print(f"{x[0]}   |    {x[1]}     |{x[2]}   |{x[3]}")
+
     def supprimer_doc(self):
-        pass
+        print("Selectionner le document a supprimer")
+        choix = input(" 1--journal\n2--Livre\n3--Bande dessinnee")
+        while choix in ['1', '2', '3']:
+            if choix == '1':
+                titre = input("Entrez le titre du journal:  ")
+                date = valider_date()
+                Journal(titre, date).enlenver_journal()
+            elif choix == '2':
+                titre = input("Entrez le titre du livre: ")
+                auteur = input("entrez l'auteur: ")
+                Livre(titre, auteur).enlever_livre()
+            elif choix == '3':
+                titre = input("Entrez le titre de la bande dessinee: ")
+                auteur = input("entrez l'auteur: ")
+                dess = input("Entrez le nom du dessinnateur:  ")
+                Bande_dessine(titre, auteur, dess).enlever_bd()
+            return
+
+    def lancer_biblio(self):
+    print(""" 
+            1. Ajouter un adhérent
+            2. Supprimer un adhérent
+            3. Afficher tous les adhérents
+            4. Ajouter un document
+            5. Supprimer un document
+            6. Afficher tous les documents
+            7. Ajouter un emprunt
+            8. Retour d'un emprunt
+            9. Afficher tous les emprunts
+            10. Quitter
+            """)
+    choix = input("Quelle operation vous sollicetez? : ")
+
 
 
 b1 = Bibliotheque()
 
-b1.ajout_adherent(Adherent('Bosco', 'Parping'))
-b1.ajout_adherent(Adherent('Pierre','Alain'))
-b1.ajout_adherent(Adherent('Pierre','Gaston'))
+#b1.ajout_adherent(Adherent('Bosco', 'Parping'))
+#b1.ajout_adherent(Adherent('Pierre','Alain'))
+#b1.ajout_adherent(Adherent('Pierre','Gaston'))
 #b1.ajout_adherent(Adherent('Bosco','Parping'))
 #b1.ajout_emprunt()
 #b1.enlever_adherent(Adherent('Bosco','Parping'))
 #b1.retour_emprunt(Adherent('Pierre', 'Gaston'), Livre('le solitaire', 'Rouseau'))
-b1.afficher_emprunt()
-b1.Afficher_adherent()
-
+#b1.afficher_emprunt()
+#b1.Afficher_adherent()
+b1.ajout_documents()
 
 
 

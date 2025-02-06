@@ -1,0 +1,5 @@
+BD:
+Titre/Auteur/Dessinateur;
+Astérix et le pot de beurre bleu, Uderzo, Goccini
+Lucky Luke et la cigarette magique, Goscinny, Morris
+Lucky Luke et la mine d'or, Gosciny, Morris

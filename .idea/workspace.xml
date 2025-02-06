@@ -4,12 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f495b790-38ce-4b9e-97fc-c6231349759f" name="Changes" comment="algo">
-      <change afterPath="$PROJECT_DIR$/securite_app/MD5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securite_app/hashage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securite_app/hashage_new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/securite_app/utilisation_algo_hash.py" afterDir="false" />
+    <list default="true" id="f495b790-38ce-4b9e-97fc-c6231349759f" name="Changes" comment="tp1 phase1">
+      <change afterPath="$PROJECT_DIR$/Cours_POO/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/BD.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/Dictionnaire.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/Journaux.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/Livre.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/Tp1_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/adherent.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/emprunt.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/main_Tp1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cours_POO/tp1/version_1/methode_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training_house/REVIS_secuapp/hash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cours_POO/fichiers/exemple_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cours_POO/fichiers/exemple_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cours_POO/interfaces/exemple1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cours_POO/interfaces/exemple1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cours_POO/interfaces/exemple2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cours_POO/interfaces/exemple2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cours_POO/interfaces/grid_layout.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cours_POO/interfaces/grid_layout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cours_POO/tp1/TP1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cours_POO/tp1/TP1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cours_POO/tp1/livre.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Cours_POO/tp1/livre.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cours_POO/tp1/mehode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cours_POO/tp1/mehode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exo_POO2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exo_POO2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securite_app/MD5.py" beforeDir="false" afterPath="$PROJECT_DIR$/securite_app/Hash/MD5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securite_app/crypto/rsa.py" beforeDir="false" afterPath="$PROJECT_DIR$/securite_app/crypto/rsa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securite_app/hashage.py" beforeDir="false" afterPath="$PROJECT_DIR$/securite_app/Hash/hashage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securite_app/hashage_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/securite_app/Hash/hashage_new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securite_app/password_projet.py" beforeDir="false" afterPath="$PROJECT_DIR$/securite_app/Hash/password_projet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securite_app/utilisation_algo_hash.py" beforeDir="false" afterPath="$PROJECT_DIR$/securite_app/Hash/utilisation_algo_hash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_house/exercice_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_house/exercice_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_house/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_house/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_jonathan/sockets_ser/socket_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_jonathan/sockets_ser/socket_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,30 +71,96 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Cour1 (1).executor": "Run",
-    "Python.Exo_POO2.executor": "Run",
-    "Python.Exo__POO3.executor": "Run",
-    "Python.MD5.executor": "Run",
-    "Python.SHA-1-2.executor": "Run",
-    "Python.exemple_Personne.executor": "Debug",
-    "Python.exercise1.executor": "Run",
-    "Python.exo-PPO6.executor": "Run",
-    "Python.hashage.executor": "Run",
-    "Python.revis.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.tri_par selection.executor": "Run",
-    "Python.utilisation_algo_hash.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Cour1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Exercice_calc_prof.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Exo_POO2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Exo__POO3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MD5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.QLabel (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.SHA-1-2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TP1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Tp1_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.additioneuse (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.calculatrice.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cour_grid_layout.executor&quot;: &quot;Run&quot;,
+    &quot;Python.crypt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.crypt1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exemple1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.exemple2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exemple_Personne.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.exemple_csv (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.exemple_csv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exemple_panda.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exemplem.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercice1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercice1_adv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercice_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercice_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercice_3 adv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercice_3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercice_calculateur.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exercise1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exo 6.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exo 7.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exo-PPO6.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exo2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exo3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exo4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exo_9.executor&quot;: &quot;Run&quot;,
+    &quot;Python.grid_layout.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hash.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hashage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mehode.executor&quot;: &quot;Run&quot;,
+    &quot;Python.password_projet.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reading_csv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.revis.executor&quot;: &quot;Run&quot;,
+    &quot;Python.revis_exemple.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rsa (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.rsa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.socket_client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.socket_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.socket_serveur (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.socket_serveur.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tri_par selection.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utilisation_algo_hash.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/TP1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.password_projet">
-    <configuration name="MD5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Github_Project\TJ\test\test\Cours_POO\tp1\version_1" />
+      <recent name="C:\Github_Project\TJ\test\test\Cours_POO\tp1" />
+      <recent name="C:\Github_Project\TJ\test\test\training_house" />
+      <recent name="C:\Github_Project\TJ\test\test\training_house\exo-fichiers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Github_Project\TJ\test\test\Cours_POO\tp1\version_1" />
+      <recent name="C:\Github_Project\TJ\test\test\training_house" />
+      <recent name="C:\Github_Project\TJ\test\test\Cours_POO\tp1" />
+      <recent name="C:\Github_Project\TJ\test\test\Cours_POO\fichiers" />
+      <recent name="C:\Github_Project\TJ\test\test\securite_app\Hash" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.TP1">
+    <configuration name="TP1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,11 +169,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Cours_POO/tp1" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/MD5.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Cours_POO/tp1/TP1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,7 +183,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="hashage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,11 +192,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/OneDrive - Collège de Bois-de-Boulogne/Cours Infrastructure/SESSION 2/420-2PR-BB PROGRAMMATION ORIENTÉE OBJET/TP1/TP1" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/hashage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/OneDrive - Collège de Bois-de-Boulogne/Cours Infrastructure/SESSION 2/420-2PR-BB PROGRAMMATION ORIENTÉE OBJET/TP1/TP1/Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,7 +206,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="hashage_new" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Tp1_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,11 +215,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Cours_POO/tp1/version_1" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Github_Project\TJ\test\test\securite_app\hashage_new.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Cours_POO/tp1/version_1/Tp1_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,7 +229,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="password_projet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="hash" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,11 +238,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/training_house/REVIS_secuapp" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/password_projet.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training_house/REVIS_secuapp/hash.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,7 +252,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utilisation_algo_hash" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,11 +261,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/securite_app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/training_house" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/securite_app/utilisation_algo_hash.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/training_house/test1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -181,18 +277,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.password_projet" />
-        <item itemvalue="Python.utilisation_algo_hash" />
-        <item itemvalue="Python.hashage_new" />
-        <item itemvalue="Python.MD5" />
-        <item itemvalue="Python.hashage" />
+        <item itemvalue="Python.TP1" />
+        <item itemvalue="Python.test1" />
+        <item itemvalue="Python.Test" />
+        <item itemvalue="Python.Tp1_1" />
+        <item itemvalue="Python.hash" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
+        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
       </set>
     </attachedChunks>
   </component>
@@ -204,6 +301,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734117995362</updated>
+      <workItem from="1738803233699" duration="696000" />
+      <workItem from="1738846171656" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="revision">
       <option name="closed" value="true" />
@@ -245,13 +344,120 @@
       <option name="project" value="LOCAL" />
       <updated>1736616007106</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="algo">
+      <option name="closed" value="true" />
+      <created>1736961605150</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736961605150</updated>
+    </task>
+    <task id="LOCAL-00007" summary="niveau1_poo">
+      <option name="closed" value="true" />
+      <created>1737240894729</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737240894729</updated>
+    </task>
+    <task id="LOCAL-00008" summary="niveau1_poo">
+      <option name="closed" value="true" />
+      <created>1737418070887</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737418070887</updated>
+    </task>
+    <task id="LOCAL-00009" summary="niveau1_poo">
+      <option name="closed" value="true" />
+      <created>1737677844627</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737677844627</updated>
+    </task>
+    <task id="LOCAL-00010" summary="24/01/2025">
+      <option name="closed" value="true" />
+      <created>1737757999242</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737757999242</updated>
+    </task>
+    <task id="LOCAL-00011" summary="tp1 phase1">
+      <option name="closed" value="true" />
+      <created>1738254523341</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738254523341</updated>
+    </task>
+    <task id="LOCAL-00012" summary="tp1 phase1">
+      <option name="closed" value="true" />
+      <created>1738286137656</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738286137656</updated>
+    </task>
+    <task id="LOCAL-00013" summary="tp1 phase1">
+      <option name="closed" value="true" />
+      <created>1738535891901</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1738535891901</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="revision" />
     <MESSAGE value="abstract" />
     <MESSAGE value="algo" />
-    <option name="LAST_COMMIT_MESSAGE" value="algo" />
+    <MESSAGE value="niveau1_poo" />
+    <MESSAGE value="24/01/2025" />
+    <MESSAGE value="tp1 phase1" />
+    <option name="LAST_COMMIT_MESSAGE" value="tp1 phase1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training_house/exercice1_adv.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Cours_POO/fichiers/exemple1.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/training_house/test.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Cours_POO/tp1/version_1/Tp1_1.py</url>
+          <line>167</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
