@@ -161,14 +161,10 @@ class Emprunter:
     def enr_emprunt(self):
         time_i = self.date_initial
         time_r = self.date_return
-        adh = self.adherent.nom +' '+ self.adherent.prenom +',' +  self.livre.titre +','+  self.livre.auteur +','+str(time_i)+','+str(time_r)
-
-        with open('emprunt.csv','a') as f:
-            w = csv.writer(f,delimiter=';')
-            w.writerow(adh)
-            #f.write('\n'+adh)
-        ###     f.write('Adherent'+','+ 'Livre' +','+ 'auteur' +','+"Date d'emprunt"+','+'Date de retour')
-
+        adh = [self.adherent.nom +' '+ self.adherent.prenom, self.livre.titre, self.livre.auteur, str(time_i), str(time_r)]
+        tab = extrait_csv('emprunt.csv')
+        tab.append(adh)
+        ecrire_csv('emprunt.csv', tab)
 
 class Bibliotheque:
     def __init__(self):
