@@ -6,31 +6,29 @@ from Cours_POO.tp1.tp2.methode import valider_date, ajout
 
 
 class Adherent:
+    liste_ad = []
     def __init__(self, prenom, nom):
         self.prenom = prenom
         self.nom = nom
 
-    def liste(self):
-        return []
 
-    #@classmethod
-    def lire_clavier(self):
-        q = [QLabel(x) for x in ('Entrez le prenom', 'Entrez le nom')]
-        g = [grid.addWidget(q[i], 4, 2+i) for i in range(2)]
+    @classmethod
+    def lire_clavier(cls):
+        q = [QLabel(x) for x in ('Entrez le prenom', 'Entrez le nom')]  # ajouter les champs qLabel
+        g = [grid.addWidget(q[i], 4, 2 + i) for i in range(2)]
         q1e = [QLineEdit(), QLineEdit()]
-        g1 = [grid.addWidget(q1e[i], 5, 2+i) for i in range(2)]  # Ajouter les champs QLineEdit
-        but_valider = QPushButton('Valider')
+        g1 = [grid.addWidget(q1e[i], 5, 2 + i) for i in range(2)]  # Ajouter les champs QLineEdit
+        but_valider = QPushButton('Valider')  # boutton valider
         grid.addWidget(but_valider, 6, 2)
-        def valider():
+
+        def valider():  # fonction de boutton valider
             prenom = q1e[0].text()
             nom = q1e[1].text()
             if prenom and nom:
                 adh = Adherent(prenom, nom)
-                listead = self.liste()
-                listead.append(adh)
-                zonetext.setText(f"{prenom} {nom} a ete ajoute a liste des adherents")
+                Adherent.liste_ad.append(adh)
                 for i in range(2):
-                    q[i].deleteLater()
+                    q[i].deleteLater()  # effacer le boutons utiliser
                     q1e[i].deleteLater()
                 but_valider.deleteLater()
         but_valider.clicked.connect(valider)
@@ -85,7 +83,7 @@ class Journal(Document):
         self.date = date
 
     @classmethod
-    def lire_clavier(cls, fonction):
+    def lire_clavier(cls):
         ql = [QLabel(x) for x in ('Entrez le titre', 'Entrez le date')]
         qle = []
         for i in range(2):
@@ -99,12 +97,37 @@ class Journal(Document):
             date = qle[1].text()
             if titre and date:
                 j1 = Journal(titre, date)
-                j1.fonction
+                j1.ajout_journal()
             for i in range(2):
                 ql[i].deleteLater()
                 qle[i].deleteLater()
             but.deleteLater()
         but.clicked.connect(valider)
+
+    @classmethod
+    def lire_clavier_sup(cls):
+        ql = [QLabel(x) for x in ('Entrez le titre', 'Entrez le date')]
+        qle = []
+        for i in range(2):
+            grid.addWidget(ql[i], 4, 2 + i)
+            qle.append(QLineEdit())
+            grid.addWidget(qle[i], 5, 2 + i)
+        but = QPushButton('Valider')
+        grid.addWidget(but, 6, 2)
+
+        def valider():
+            titre = qle[0].text()
+            date = qle[1].text()
+            if titre and date:
+                j1 = Journal(titre, date)
+                j1.supprimer_journal()
+            for i in range(2):
+                ql[i].deleteLater()
+                qle[i].deleteLater()
+            but.deleteLater()
+
+        but.clicked.connect(valider)
+
 
     def ajout_journal(self):
         zonetext.clear()
@@ -142,7 +165,7 @@ class Dictionnaire(Volume):
         super().__init__(titre, auteur)
 
     @classmethod
-    def lire_clavier(cls, fonction):
+    def lire_clavier(cls):
         ql = [QLabel(x) for x in ('Entrez le titre', "Entrez l'auteur")]
         qle = []
         for i in range(2):
@@ -157,7 +180,31 @@ class Dictionnaire(Volume):
             auteur = qle[1].text()
             if titre and auteur:
                 d1 = Dictionnaire(titre, auteur)
-                d1.fonction
+                d1.ajout_dictionnaire()
+            for i in range(2):
+                ql[i].deleteLater()
+                qle[i].deleteLater()
+            but.deleteLater()
+
+        but.clicked.connect(valider)
+
+    @classmethod
+    def lire_clavier_sup(cls):
+        ql = [QLabel(x) for x in ('Entrez le titre', "Entrez l'auteur")]
+        qle = []
+        for i in range(2):
+            grid.addWidget(ql[i], 4, 2 + i)
+            qle.append(QLineEdit())
+            grid.addWidget(qle[i], 5, 2 + i)
+        but = QPushButton('Valider')
+        grid.addWidget(but, 6, 2)
+
+        def valider():
+            titre = qle[0].text()
+            auteur = qle[1].text()
+            if titre and auteur:
+                d1 = Dictionnaire(titre, auteur)
+                d1.supprimer_dictionnaire()
             for i in range(2):
                 ql[i].deleteLater()
                 qle[i].deleteLater()
@@ -188,11 +235,12 @@ class Dictionnaire(Volume):
         zonetext.setText(f"--{self.titre}-- de --{self.auteur}-- a été supprime de la bibliotheque")
 
 class Livre(Volume):
+    liste_li = []
     def __init__(self, titre, auteur, ISBN):
         super().__init__(titre, auteur)
         self.ISBN = ISBN
     @classmethod
-    def lire_clavier(cls, fonction):
+    def lire_clavier(cls):
         ql = [QLabel(x) for x in ('Entrez le titre', "Entrez l'auteur", "Entrez l'ISBN" )]
         qle = []
         for i in range(3):
@@ -208,14 +256,39 @@ class Livre(Volume):
             ISBN = qle[2].text()
             if titre and auteur:
                 l1 = Livre(titre, auteur, ISBN)
-                l1.fonction
+                l1.ajout_livre()
             for i in range(3):
                 ql[i].deleteLater()
                 qle[i].deleteLater()
             but.deleteLater()
 
         but.clicked.connect(valider)
-    #@classmethod
+
+    @classmethod
+    def lire_clavier_sup(cls):
+        ql = [QLabel(x) for x in ('Entrez le titre', "Entrez l'auteur", "Entrez l'ISBN")]
+        qle = []
+        for i in range(3):
+            grid.addWidget(ql[i], 4, 2 + i)
+            qle.append(QLineEdit())
+            grid.addWidget(qle[i], 5, 2 + i)
+        but = QPushButton('Valider')
+        grid.addWidget(but, 6, 2)
+
+        def valider():
+            titre = qle[0].text()
+            auteur = qle[1].text()
+            ISBN = qle[2].text()
+            if titre and auteur:
+                l1 = Livre(titre, auteur, ISBN)
+                l1.supprimer_livre()
+            for i in range(3):
+                ql[i].deleteLater()
+                qle[i].deleteLater()
+            but.deleteLater()
+
+        but.clicked.connect(valider)
+
     def ajout_livre(self):
         zonetext.clear()
         conn = sqlite3.connect('bibliotheque')
@@ -242,6 +315,31 @@ class Livre(Volume):
         conn.commit()
         conn.close()
 
+    @classmethod
+    def lire_clavier_stock(cls):
+        ql = [QLabel(x) for x in ('Entrez le titre', "Entrez l'auteur", "Entrez l'ISBN" )]
+        qle = []
+        for i in range(3):
+            grid.addWidget(ql[i], 4, 2 + i)
+            qle.append(QLineEdit())
+            grid.addWidget(qle[i], 5, 2 + i)
+        but = QPushButton('Valider')
+        grid.addWidget(but, 6, 2)
+
+        def valider():
+            titre = qle[0].text()
+            auteur = qle[1].text()
+            ISBN = qle[2].text()
+            if titre and auteur:
+                l1 = Livre(titre, auteur, ISBN)
+                Livre.liste_li.append(l1)
+            for i in range(3):
+                ql[i].deleteLater()
+                qle[i].deleteLater()
+            but.deleteLater()
+
+        but.clicked.connect(valider)
+
     def est_disponible(self):
         conn = sqlite3.connect('bibliotheque')
         c = conn.cursor()
@@ -260,7 +358,7 @@ class BandeD(Volume):
         self.dessinateur = dessinateur
 
     @classmethod
-    def lire_clavier(cls, fonction):
+    def lire_clavier(cls):
         ql = [QLabel(x) for x in ('Entrez le titre', "Entrez l'auteur", "Entrez le dessinateur")]
         qle = []
         for i in range(3):
@@ -273,10 +371,10 @@ class BandeD(Volume):
         def valider():
             titre = qle[0].text()
             auteur = qle[1].text()
-            ISBN = qle[2].text()
+            dessinateur = qle[2].text()
             if titre and auteur:
-                b1 = Livre(titre, auteur, ISBN)
-                b1.fonction
+                b1 = BandeD(titre, auteur, dessinateur)
+                b1.ajout_bandeD()
             for i in range(3):
                 ql[i].deleteLater()
                 qle[i].deleteLater()
@@ -284,6 +382,30 @@ class BandeD(Volume):
 
         but.clicked.connect(valider)
 
+    @classmethod
+    def lire_clavier_sup(cls):
+        ql = [QLabel(x) for x in ('Entrez le titre', "Entrez l'auteur", "Entrez le dessinateur")]
+        qle = []
+        for i in range(3):
+            grid.addWidget(ql[i], 4, 2 + i)
+            qle.append(QLineEdit())
+            grid.addWidget(qle[i], 5, 2 + i)
+        but = QPushButton('Valider')
+        grid.addWidget(but, 6, 2)
+
+        def valider():
+            titre = qle[0].text()
+            auteur = qle[1].text()
+            dessinateur = qle[2].text()
+            if titre and auteur:
+                b1 = BandeD(titre, auteur, dessinateur)
+                b1.supprimer_bandeD()
+            for i in range(3):
+                ql[i].deleteLater()
+                qle[i].deleteLater()
+            but.deleteLater()
+
+        but.clicked.connect(valider)
 
     def ajout_bandeD(self):
         zonetext.clear()
@@ -320,17 +442,22 @@ class Emprunt:
 
     @classmethod
     def lire_clavier(cls):
-        adh = Adherent.lire_clavier()  #creer un object adherent
-        if not adh.est_adherent:
-            print(f"Emprunt impossible car --{adh.prenom} {adh.nom}-- n'est pas adherent")
+        Adherent.lire_clavier()
+        if Adherent.lire_clavier():
+            adh =Adherent.liste_ad[-1]   #recupere le denier adherent ajouter
+        #creer un object adherent
+        '''if not adh.est_adherent:
+            zonetext.setText(f"Emprunt impossible car --{adh.prenom} {adh.nom}-- n'est pas adherent")
             return
         else:
-            livre = Livre.lire_clavier() # creer le livre a emprunter
-        return  Emprunt(adh, livre)     #retourne un object emprunt
+            Livre.lire_clavier_stock()  # creer le livre a emprunter
+            livre = Livre.liste_li   #recuperer le livre cree
+        return  Emprunt(adh, livre) '''    #retourner un object emprunt
 
-    def enregistrer(self):
+    def enregistrer_emp(self):
+        zonetext.clear()
         if not self.livre.est_disponible():
-            print(f"Emprunt impossible --{self.livre.titre}-- de --{self.livre.auteur}-- est indisponible")
+            zonetext.setText(f"Emprunt impossible --{self.livre.titre}-- de --{self.livre.auteur}-- est indisponible")
             return   # Si le livre n'est pas disponible
         conn = sqlite3.connect('bibliotheque')
         c = conn.cursor()
@@ -340,12 +467,13 @@ class Emprunt:
         c.execute("delete from livre where ISBN = ?", (self.livre.ISBN,))
         conn.commit()
         conn.close()
-        print(f"--{self.livre.titre}-- de --{self.livre.auteur}-- a ete emprunter par -{self.adh.prenom} {self.adh.nom}-")
+        zonetext.setText(f"--{self.livre.titre}-- de --{self.livre.auteur}-- a ete emprunter par -{self.adh.prenom} {self.adh.nom}-")
 
     def retour_emprunt(self):
+        zonetext.clear()  #nettoyer la zone de text
         conn = sqlite3.connect('bibliotheque')
         c = conn.cursor()
-        req = "delete from emprunt where adherent = ? and titre = ? and auteur = ?"
+        req = "delete from emprunts where adherent = ? and titre = ? and auteur = ?"
         #supprimer l'emprunt
         c.execute(req, (f'{self.adh.prenom} {self.adh.nom}', self.livre.titre, self.livre.auteur))
         #remettre le livre en etagere afin qu'il soit disponible
@@ -353,7 +481,7 @@ class Emprunt:
         c.execute(reql, (self.livre.titre, self.livre.auteur, self.livre.ISBN))
         conn.commit()
         conn.close()
-        print(f"--{self.livre.titre}-- de --{self.livre.auteur}-- a ete retourne par -{self.adh.prenom} {self.adh.nom}-")
+        zonetext.setText(f"--{self.livre.titre}-- de --{self.livre.auteur}-- a ete retourne par -{self.adh.prenom} {self.adh.nom}-")
 
 
 
@@ -419,66 +547,106 @@ class Bibliotheque:
 
 
     def ajout_document(self):
-        print("Selectionnez le document a ajouter")
-        print("1-JOURNAL \n2- LIVRE \n3- BANDE DESSINE \n4- DICTIONNAIRE")
-        choix = input("Entrez un chiffre parmi les suivant selon votre choix 1,2,3,4: ")
-        while choix not in ['1','2','3','4']:
-            choix = input("Erreur choix erroné. Recommencer juste de 1 a 4 : ")
-        if choix == '1':
-           Journal.ajout_journal()
-        elif choix == '2':
-            Livre.ajout_livre()
-        elif choix == '3':
-            BandeD.ajout_bandeD()
-        elif choix == '4':
-            Dictionnaire.ajout_dictionnaire()
+        ql = QLabel("Selectionnez le document a ajouter")
+        grid.addWidget(ql,1, 2)
+        ql1 = QLabel("1-JOURNAL \n2- LIVRE \n3- BANDE DESSINE \n4- DICTIONNAIRE")
+        grid.addWidget(ql1, 2, 2)
+        ql2 = QLabel("Entrez un chiffre parmi les suivant selon votre choix 1,2,3,4")
+        grid.addWidget(ql2, 6, 2)
+        qle = QLineEdit()
+        grid.addWidget(qle, 6, 3)
+        but_valider = QPushButton('Valider')
+        grid.addWidget(but_valider, 7, 3)
+        def valider():
+            choix = qle.text()   #Recuperer la saisie au clavier
+            if choix not in ['1','2','3','4']:
+                ql2.setText("Erreur : choix erroné. Recommencer juste les chiffres de 1 a 4 : ")
+                qle.clear()   # effacer l'entree utilisateur
+                return
+            ql.deleteLater()
+            ql1.deleteLater()
+            ql2.deleteLater()
+            qle.deleteLater()
+            but_valider.deleteLater()
+            # Journal.ajout_journal()
+            if choix == '1':
+                Journal.lire_clavier()
+            elif choix == '2':
+                Livre.lire_clavier()
+            elif choix == '3':
+                BandeD.lire_clavier()
+            elif choix == '4':
+                Dictionnaire.lire_clavier()
+        but_valider.clicked.connect(valider)
 
     def supprimer_document(self):
-        print("Selectionnez le document a supprimer")
-        print("1-JOURNAL \n2- LIVRE \n3- BANDE DESSINE \n4- DICTIONNAIRE")
-        choix = input("Entrez un chiffre parmi les suivant selon votre choix 1,2,3,4 : ")
-        while choix not in ['1', '2', '3', '4']:
-            choix = input("Erreur choix errone. Recommencer : ")
-        if choix == '1':
-            Journal.supprimer_journal()
-        elif choix == '2':
-            Livre.supprimer_livre()
-        elif choix == '3':
-            BandeD.supprimer_bandeD()
-        elif choix == '4':
-            Dictionnaire.supprimer_dictionnaire()
+        ql = QLabel("Selectionnez le document a supprimerr")
+        grid.addWidget(ql, 1, 2)
+        ql1 = QLabel("1-JOURNAL \n2- LIVRE \n3- BANDE DESSINE \n4- DICTIONNAIRE")
+        grid.addWidget(ql1, 2, 2)
+        ql2 = QLabel("Entrez un chiffre parmi les suivants selon votre choix 1,2,3,4")
+        grid.addWidget(ql2, 6, 2)
+        qle = QLineEdit()
+        grid.addWidget(qle, 6, 3)
+        but_valider = QPushButton('Valider')
+        grid.addWidget(but_valider, 7, 3)
+
+        def valider():
+            choix = qle.text()  # Recuperer la saisie au clavier
+            if choix not in ['1', '2', '3', '4']:
+                ql2.setText("Erreur : choix erroné. Recommencer juste les chiffres de 1 a 4 : ")
+                qle.clear()  # effacer l'entree utilisateur
+                return
+            ql.deleteLater()
+            ql1.deleteLater()
+            ql2.deleteLater()
+            qle.deleteLater()
+            but_valider.deleteLater()
+            # Journal.ajout_journal()
+            if choix == '1':
+                Journal.lire_clavier_sup()
+            elif choix == '2':
+                Livre.lire_clavier_sup()
+            elif choix == '3':
+                BandeD.lire_clavier_sup()
+            elif choix == '4':
+                Dictionnaire.lire_clavier_sup()
+
+        but_valider.clicked.connect(valider)
 
     def afficher_doc(self):
         conn = sqlite3.connect('bibliotheque')
         c = conn.cursor()
         c.execute("select * from livre")
         li = c.fetchall()
-        print()
-        print("LISTE DES LIVRES DISPONIBLES LA BIBLIOTHEQUE")
+        zonetext.clear()
+        zonetext.setText("LISTE DES LIVRES DISPONIBLES LA BIBLIOTHEQUE\n")
         for x in li:
-            print(f"{x[0]} | {x[1]}  |  {x[2]}   | {x[3]}")
+            zonetext.append(f"{x[0]} | {x[1]}  |  {x[2]}   | {x[3]}\n")
         c.execute("select * from journal")
         jourl = c.fetchall()
-        print()
-        print("LISTE DES JOURNAUX DE LA BIBLIOTHEQUE")
+
+        zonetext.append("LISTE DES JOURNAUX DE LA BIBLIOTHEQUE\n")
         for x in jourl:
-            print(f"{x[0]}   |   {x[1]}   |    {x[2]}")
+            zonetext.append(f"{x[0]}   |   {x[1]}   |    {x[2]}\n")
         c.execute("select * from bandeD")
         bd = c.fetchall()
-        print()
-        print("LISTE DES BANDES DESSINNEES DE LA BIBLIOTHEQUE")
+
+        zonetext.append("LISTE DES BANDES DESSINNEES DE LA BIBLIOTHEQUE\n")
         for x in bd:
-            print(f"{x[0]}  |  {x[1]}    |   {x[2]}    |   {x[3]}")
+            zonetext.append(f"{x[0]}  |  {x[1]}    |   {x[2]}    |   {x[3]}\n")
         c.execute("select * from dictionnaire")
         dico = c.fetchall()
-        print()
-        print("LISTE DES DICTIONNAIRE DE LA BIBLIOTHEQUE")
+
+        zonetext.append("LISTE DES DICTIONNAIRE DE LA BIBLIOTHEQUE\n")
         for x in dico:
-            print(f"{x[0]}   |   {x[1]}    |   {x[2]}")
+            zonetext.append(f"{x[0]}   |   {x[1]}    |   {x[2]}\n")
         conn.close()
 
     def ajout_emprunt(self):
-        Emprunt.lire_clavier().enregistrer()
+        Emprunt.lire_clavier()
+
+
 
     def retour_emprunt(self):
         Emprunt.lire_clavier().retour_emprunt()
@@ -512,7 +680,7 @@ grid.addWidget(acceuil, 0, 3)
 
 #buton = QPushButton("ajouter adherent")
 #grid.addWidget(buton, 1, 1)
-tab = ['Ajouter adherent', 'Supprimer adherent', 'Afficher tous les adherents', 'Ajouter documents', 'Supprimer documents', 'Ajouter emprunt', 'Retour emprunt', 'Afficher tous les emprunts', 'Quitter']
+tab = ['Ajouter adherent', 'Supprimer adherent', 'Afficher tous les adherents', 'Ajouter documents', 'Supprimer documents', 'Afficher documents', 'Ajouter emprunt', 'Retour emprunt', 'Afficher tous les emprunts', 'Quitter']
 button = [QPushButton(x) for x in tab]
 for i in range(len(button)):
     position = [grid.addWidget(button[i], i+1, 1) ]
@@ -525,8 +693,14 @@ b = Bibliotheque()
 
 
 #button[2].clicked.connect(lambda: b.afficher_adherent(zonetext))
-#button[0].clicked.connect(b.ajout_adherent)
-button[1].clicked.connect(b.journal)
+button[0].clicked.connect(b.ajout_adherent)
+#button[1].clicked.connect(b.journal)
+button[3].clicked.connect(b.ajout_document)
+button[4].clicked.connect(b.supprimer_document)
+button[5].clicked.connect(b.afficher_doc)
+button[6].clicked.connect(b.ajout_emprunt)
+button[7].clicked.connect(b.retour_emprunt)
+
 
 fen.show()
 app.exec()
