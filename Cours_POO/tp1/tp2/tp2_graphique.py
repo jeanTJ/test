@@ -283,6 +283,7 @@ class Livre(Volume):
         c = conn.cursor()
         c.execute("""select ISBN from livre""")
         tab = [x[0] for x in c.fetchall()]
+        print(tab)
         ele = self.ISBN
         if ele in tab:
             c.execute("delete from livre where ISBN = ?", (ele,))
@@ -786,7 +787,7 @@ grid = QGridLayout()
 fen.setLayout(grid)
 
 #Qlabel
-acceuil = QLabel("BIENVENUE DANS LA BIBLIOTHE DE ALEXANDRE ET TJ")
+acceuil = QLabel("BIENVENUE DANS LA BIBLIOTHE D'ALEXANDRE ET TJ")
 grid.addWidget(acceuil, 0, 3)
 
 #buton = QPushButton("ajouter adherent")
